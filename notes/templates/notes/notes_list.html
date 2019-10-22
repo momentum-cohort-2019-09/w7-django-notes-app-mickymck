@@ -2,8 +2,8 @@
 
 {% block content %}
     <ul>
-        {% for num, entry in notes.items %}
-            <li><a href="/notes/{{num}}">{{ entry.title }}</a></li>
+        {% for note in notes %}
+            <li><a href="notes/{{ note.pk }}">{{ note.title }}</a></li>
         {% endfor %}
     </ul>
 {% endblock %}

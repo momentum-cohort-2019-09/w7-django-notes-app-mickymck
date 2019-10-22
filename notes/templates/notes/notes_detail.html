@@ -1,10 +1,11 @@
 {% extends "notes/base.html" %}
+{% load markdownify %}
 
-{% block title %}Notes - {{entry.title}}{% endblock %}
+{% block title %}Notes - {{note.title}}{% endblock %}
 
-{% block header %}notes Notes NOTES!!! - {{entry.title}}{% endblock %}
+{% block header %}notes Notes NOTES!!! - {{note.title}}{% endblock %}
 
 {% block content %}
-    <h2>{{ entry.title }}</h2>
-    <p>{{ entry.body }}</p>
+    <h2>{{ note.title }}</h2>
+    <p>{{ note.body|markdownify }}</p>
 {% endblock %}
