@@ -1,0 +1,25 @@
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+.page-header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: bisque;
+    text-align: center;
+    color: darkred;
+}
+
+li {
+    padding-top: 10px;
+}
+
+h2 {
+    padding: 20px 0 20px 0;
+}

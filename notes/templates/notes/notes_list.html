@@ -1,0 +1,9 @@
+{% extends "notes/base.html" %}
+
+{% block content %}
+    <ul>
+        {% for num, entry in notes.items %}
+            <li><a href="/notes/{{num}}">{{ entry.title }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
