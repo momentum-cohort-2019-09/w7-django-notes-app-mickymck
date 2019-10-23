@@ -1,0 +1,16 @@
+{% extends "notes/base.html" %}
+
+{% block title %}Notes - Create New Note{% endblock %}
+
+{% block content %}
+    <div class='create-note'>
+        <div class='create-note-header'>
+            <h2>Create a New Note</h2>
+        </div>
+        <form method='POST' class='new-note-form'>
+            {% csrf_token %}
+            {{ form }}
+            <button type='submit'>Create Note</button>
+        </form>
+    </div>
+{% endblock %}
