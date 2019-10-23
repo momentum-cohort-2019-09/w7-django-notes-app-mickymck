@@ -1,10 +1,12 @@
 {% extends "notes/base.html" %}
 
 {% block content %}
+<div class='new-note-button-div'>
     <button onclick="window.location.href='notes/new-note';" class='new-note-button'>Create a New Note</button>
-    <ul>
-        {% for note in notes %}
-            <li><a href="notes/{{ note.pk }}">{{ note.title }}</a></li>
-        {% endfor %}
-    </ul>
+</div>
+<ul class='all-notes-list'>
+    {% for note in notes %}
+    <li><a href="notes/{{ note.pk }}">{{ note.title }}</a></li>
+    {% endfor %}
+</ul>
 {% endblock %}
