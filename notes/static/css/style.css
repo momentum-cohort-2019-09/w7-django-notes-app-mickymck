@@ -57,6 +57,10 @@ h2 {
     align-self: center;
 }
 
+.create-note {
+    margin-bottom: 50px;
+}
+
 .create-note-header {
     text-align: center;
 }
@@ -71,4 +75,23 @@ h2 {
     text-align: right;
     margin: 20px auto;
     max-width: 50%;
+}
+
+.delete-div {
+    text-align: right;
+    color: red;
+    text-decoration: none;
+}
+
+.note-delete {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 50%;
+}
+
+.note-delete-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 40px;
 }

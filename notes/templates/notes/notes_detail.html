@@ -4,19 +4,22 @@
 {% block title %}Notes - {{note.title}}{% endblock %}
 
 {% block content %}
-    <div class='back-to-notes'>
-        <a href='/'>Back to Notes</a>
-    </div>    
-    <div class='note'>
-        <div class='note-header'>
-            <h2>{{ note.title }}</h2>
-            <p class='create_date'>{{ note.created_at }}</p>
-        </div>
-        <div class='note-body'>
-            <p>{{ note.body|markdownify }}</p>
+<div class='back-to-notes'>
+    <a href='/'>Back to Notes</a>
+</div>
+<div class='note'>
+    <div class='note-header'>
+        <h2>{{ note.title }}</h2>
+        <p class='create_date'>{{ note.created_at }}</p>
+    </div>
+    <div class='note-body'>
+        <p>{{ note.body|markdownify }}</p>
+        <div class='delete-div'>
+            <a href="/notes/{{ note.pk }}/delete" class='delete-text'>delete</p>
         </div>
     </div>
-    <div class='comment'>
+</div>
+<!-- <div class='comment'>
         <a href="comment">Leave Comment</a>
-    </div>
+    </div> -->
 {% endblock %}

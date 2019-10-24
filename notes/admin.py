@@ -2,7 +2,9 @@ from django.contrib import admin
 
 # Register your models here.
 
-from notes.models import Note, Comment
+from notes.models import Note
+
+# from notes.models import Note, Comment
 
 class NoteAdmin(admin.ModelAdmin):
     list_display = (
@@ -17,4 +19,4 @@ class CommentAdmin(admin.ModelAdmin):
     )
 
 admin.site.register(Note, NoteAdmin)
-admin.site.register(Comment, CommentAdmin)
+# admin.site.register(Comment, CommentAdmin)

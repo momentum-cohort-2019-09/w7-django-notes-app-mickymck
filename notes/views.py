@@ -1,6 +1,7 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from notes.models import Note
-from notes.forms import NewNoteForm, CommentForm
+from notes.forms import NewNoteForm
+# from notes.forms import NewNoteForm, CommentForm
 
 # Create your views here.
 
@@ -27,18 +28,22 @@ def new_note(request):
 
     return render(request, "notes/create_new_note.html", {"form": form})
 
-def add_comment(request):
+# def add_comment(request):
+#     if request.method == 'POST':
+#         form = CommentForm(request.POST)
+#         if form.is_valid():
+#             comment = form.save(commit=False)
+#             comment.note = note
+#             comment.save()
+#             return redirect('/')
+#     else:
+#         form = NewNoteForm()
+
+#     return render(request, "notes/notes_detail.html", {"form": form})       
+
+def note_delete(request, pk):
+    note = get_object_or_404(Note, pk=pk)
     if request.method == 'POST':
-        form = CommentForm(request.POST)
-        if form.is_valid():
-            comment = form.save(commit=False)
-            comment.note = note
-            comment.save()
-            return redirect('/')
-    else:
-        form = NewNoteForm()
-
-    return render(request, "notes/notes_detail.html", {"form": form})       
-
-
-        
+        note.delete()
+        return redirect(to='notes_list')
+    return render(request, 'notes/note_delete.html', {"note": note})
