@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from notes.models import Note
-from notes.forms import NewNoteForm
+from notes.forms import NewNoteForm, CommentForm
 
 # Create your views here.
 
@@ -26,5 +26,19 @@ def new_note(request):
         form = NewNoteForm()
 
     return render(request, "notes/create_new_note.html", {"form": form})
+
+def add_comment(request):
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.note = note
+            comment.save()
+            return redirect('/')
+    else:
+        form = NewNoteForm()
+
+    return render(request, "notes/notes_detail.html", {"form": form})       
+
 
         

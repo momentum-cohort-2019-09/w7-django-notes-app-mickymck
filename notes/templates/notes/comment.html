@@ -1,6 +1,6 @@
 {% extends "notes/base.html" %}
 
-{% block title %}Notes - Create New Note{% endblock %}
+{% block title %}Notes - Leave a Comment{% endblock %}
 
 {% block content %}
     <div class='back-to-notes'>
@@ -8,12 +8,12 @@
     </div>
     <div class='create-note'>
         <div class='create-note-header'>
-            <h2>Create a New Note</h2>
+            <h2>Leave a Comment</h2>
         </div>
-        <form method='POST' class='new-note-form'>
+        <form method='POST' class='comment-form'>
             {% csrf_token %}
             {{ form.as_p }}
-            <button type='submit'>Create Note</button>
+            <button type='submit'>Leave Comment</button>
         </form>
     </div>
 {% endblock %}
