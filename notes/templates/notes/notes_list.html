@@ -2,7 +2,7 @@
 {% load markdownify %}
 
 {% block head %}
-<script src='static/js/notes_list.js' defer></script>
+    <script src='static/js/notes_list.js' defer></script>
 {% endblock %}
 
 {% block content %}
@@ -23,16 +23,19 @@
             
 
             <div class='note'>
-                <div class='note-header'>
-                    <h2>{{ note.title }}</h2>
-                </div>
-                <div class='note-body'>
-                    <p>{{ note.body|markdownify }}</p>
-                </div>
-                <div class='note-options-div'>
-                    <a href="/notes/{{ note.pk }}/delete" class='delete-text'>x</a>
-                    <a href="/notes/{{ note.pk }}/edit">Edit</a>
-                </div>
+
+
+                <h2 class='note-header'>{{ note.title }}</h2>
+
+                <p class='note-body'>{{ note.body|markdownify }}</p>
+                <form action="{% url 'note_edit' pk=note.pk %}" method='POST' class='body-edit-form' id='body-edit-form-{{ note.pk }}'>
+                    {% csrf_token %}
+                    <input class='body-edit-input' type='text' name='body' value='{{ note.body }}'>
+                </form>
+                <a class='note-edit-link' data-item-pk="{{ item.pk }}">Edit</a>
+
+                <a href="/notes/{{ note.pk }}/delete" class='delete-text'>x</a>
+
             </div>
 
 

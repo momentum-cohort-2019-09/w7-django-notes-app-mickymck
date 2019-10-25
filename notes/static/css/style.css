@@ -18,7 +18,7 @@ h1 {
 }
 
 h2 {
-    font-size: 18px;
+    font-size: 19px;
     font-weight: 600;
     margin: 0;
 }
@@ -42,43 +42,65 @@ h2 {
 }
 
 .note {
-    background-color: rgb(255, 250, 240);
-}
-
-.note-options-div {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    text-align: right;
-    margin: -7px 2px auto auto;
-}
-
-.delete-text {
-    font-size: 20px;
-    color: red;
-    text-decoration: none;
-}
-
-.note {
     display: flex;
     flex-direction: row;
     text-align: center;
+    background-color: rgb(255, 250, 240);
+    min-height: 60px;
 }
 
-.note-header {
+/* .note-header {
     margin: auto 10px;
+} */
+
+/* .note-body {
+    margin: auto 10px;
+} */
+
+.note .body-edit-form {
+    margin: auto 0;
+    display: none;
 }
 
-.note-body {
-    margin: 10px;
+.delete-text {
+    display: none;
 }
 
-.note-body p {
+.note-edit-link {
+    display: none;
+}
+
+/* .note:hover .note-options-div {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    margin: -10px 2px auto auto;
+} */
+
+.note:hover .delete-text {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    margin: -10px 2px auto auto;
+    font-size: 28px;
+    text-decoration: none;
+    color: red;
+}
+
+.note:hover .note-edit-link {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    /* margin: -10px 2px auto auto; */
+}
+
+/* .note-body p {
     margin: 0 auto;
-}
+} */
 
 .add-comment {
     margin: 10px 0 0 10%;
+    text-align: right;
     width: 90%;
 }
 
