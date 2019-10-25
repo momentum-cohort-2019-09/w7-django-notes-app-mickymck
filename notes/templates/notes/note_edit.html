@@ -1,0 +1,15 @@
+{% extends "notes/base.html" %}
+{% load markdownify %}
+
+{% block content %}
+    <div class='edit-note'>
+        <div class='edit-note-header'>
+            <h2>Edit {{ note.title }}</h2>
+        </div>
+        <form method='POST' class='edit-note-form'>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type='submit'>Edit Note</button>
+        </form>
+    </div>
+{% endblock %}

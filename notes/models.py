@@ -10,12 +10,12 @@ class Note(models.Model):
     def __str__(self):
         return self.title
 
-# class Comment(models.Model):
-#     note = models.ForeignKey(Note, related_name='comments', on_delete=models.CASCADE)
-#     user = models.CharField(max_length=100)
-#     email = models.EmailField()
-#     comment = models.TextField()
+class Comment(models.Model):
+    note = models.ForeignKey(Note, related_name='comments', on_delete=models.CASCADE)
+    user = models.CharField(max_length=100)
+    email = models.EmailField()
+    comment = models.TextField()
 
-#     def __str__(self):
-#         return self.user
+    def __str__(self):
+        return self.user
 

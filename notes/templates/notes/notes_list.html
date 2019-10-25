@@ -1,12 +1,60 @@
 {% extends "notes/base.html" %}
+{% load markdownify %}
+
+{% block head %}
+<script src='static/js/notes_list.js' defer></script>
+{% endblock %}
 
 {% block content %}
+
+
 <div class='new-note-button-div'>
     <button onclick="window.location.href='notes/new-note';" class='new-note-button'>Create a New Note</button>
 </div>
-<ul class='all-notes-list'>
+
+
+<div class='all-notes'>
+
+
     {% for note in notes %}
-    <li><a href="notes/{{ note.pk }}">{{ note.title }}</a></li>
+
+
+        <div class='note-properties'>
+            
+
+            <div class='note'>
+                <div class='note-header'>
+                    <h2>{{ note.title }}</h2>
+                </div>
+                <div class='note-body'>
+                    <p>{{ note.body|markdownify }}</p>
+                </div>
+                <div class='note-options-div'>
+                    <a href="/notes/{{ note.pk }}/delete" class='delete-text'>x</a>
+                    <a href="/notes/{{ note.pk }}/edit">Edit</a>
+                </div>
+            </div>
+
+
+            <div class='add-comment'>
+                <a href="/notes/{{ note.pk }}/comment">Add Comment</a>
+            </div>
+
+            
+            {% for comment in note.comments.all %}
+                <div class='comment-body'>
+                    <p>{{ comment.comment }}</p>
+                </div>
+            {% endfor %}
+            
+
+        </div>
+
+
     {% endfor %}
-</ul>
+
+
+</div>
+
+
 {% endblock %}

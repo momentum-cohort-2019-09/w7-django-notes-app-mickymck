@@ -4,7 +4,7 @@ from django.contrib import admin
 
 from notes.models import Note
 
-# from notes.models import Note, Comment
+from notes.models import Note, Comment
 
 class NoteAdmin(admin.ModelAdmin):
     list_display = (
@@ -14,9 +14,11 @@ class NoteAdmin(admin.ModelAdmin):
 
 class CommentAdmin(admin.ModelAdmin):
     list_display = (
+        'note',
+        'comment',
         'user',
         'email',
     )
 
 admin.site.register(Note, NoteAdmin)
-# admin.site.register(Comment, CommentAdmin)
+admin.site.register(Comment, CommentAdmin)

@@ -5,9 +5,9 @@
 {% block content %}
     <div class='note-delete'>
         <div class='note-delete-header'>
-            <h2>Delete Your Note?</h2>
+            <h2>Delete {{ note.title }}?</h2>
         </div>
-        <p>Are you sure you want to delete {{ note.title }}?</p>
+        <p>Are you sure you want to delete {{ note.title }} for ever and ever?</p>
         <div class='note-delete-buttons'>
             <form method='POST' class='delete-button'>
                 {% csrf_token %}

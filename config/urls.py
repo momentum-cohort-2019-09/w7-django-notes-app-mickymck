@@ -21,7 +21,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.notes_list, name='notes_list'),
     path('notes/new-note', views.new_note, name='new_note'),
-    path('notes/<int:pk>/', views.notes_detail, name='notes_detail'),
+    path('notes/<int:pk>', views.notes_detail, name='notes_detail'),
+    path('notes/<int:pk>/edit', views.note_edit, name='note_edit'),
     path('notes/<int:pk>/delete', views.note_delete, name='note_delete'),
-    # path('notes/<int:pk>/comment', views.add_comment, name='comment')
+    path('notes/<int:pk>/comment', views.add_comment, name='comment')
 ]
