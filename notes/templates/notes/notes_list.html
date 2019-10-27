@@ -28,13 +28,25 @@
                 <h2 class='note-header'>{{ note.title }}</h2>
 
                 <p class='note-body'>{{ note.body|markdownify }}</p>
+
                 <form action="{% url 'note_edit' pk=note.pk %}" method='POST' class='body-edit-form' id='body-edit-form-{{ note.pk }}'>
                     {% csrf_token %}
                     <input class='body-edit-input' type='text' name='body' value='{{ note.body }}'>
                 </form>
+                
                 <a class='note-edit-link' data-item-pk="{{ item.pk }}">Edit</a>
+                <a href='/'class='edit-cancel'>Cancel</a>
 
-                <a href="/notes/{{ note.pk }}/delete" class='delete-text'>x</a>
+                <a class='note-delete-link' data-item-pk='{{ item.pk }}'>x</a>
+                
+                <form action="{% url 'note_delete' pk=note.pk %}" method='POST' class='delete-note-form' id='delete-note-form-{{ note.pk }}'>
+                    {% csrf_token %}
+                    {{form}}
+                    <p>Delete <strong>{{ note.title }}</strong>?</p>
+                    <button type='submit' class='delete-button'>Delete</button>
+                    <a href='/';" class='cancel-button'>Cancel</a>
+                </form>
+
 
             </div>
 
