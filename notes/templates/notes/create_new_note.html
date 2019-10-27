@@ -3,17 +3,18 @@
 {% block title %}Notes - Create New Note{% endblock %}
 
 {% block content %}
-    <div class='back-to-notes'>
+    <div class='create-note-container'>
+        
         <a href='/'>Back to Notes</a>
-    </div>
-    <div class='create-note'>
+    
         <div class='create-note-header'>
             <h2>Create a New Note</h2>
         </div>
         <form method='POST' class='new-note-form'>
             {% csrf_token %}
-            {{ form.as_p }}
+            {{ form }}
             <button type='submit'>Create Note</button>
         </form>
+
     </div>
 {% endblock %}

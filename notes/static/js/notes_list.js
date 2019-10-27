@@ -16,9 +16,10 @@ for (let link of document.querySelectorAll('.note-delete-link')){
     })
 }
 
-// for (let link of document.querySelectorAll('.comment-button')){
-//     link.addEventListener('click', event => {
-//         link.parentElement.querySelector('.comment-link').style.display='none'
-//         link.parentElement.querySelector('.comment-form').style.display='inline-block'
-//     })
-// }
+for (let link of document.querySelectorAll('.comment-button')){
+    link.addEventListener('click', event => {
+        link.parentElement.querySelector('.comment-button').style.display='none'
+        link.parentElement.querySelector('.comment-form').style.display='inline-block'
+    })
+}
+

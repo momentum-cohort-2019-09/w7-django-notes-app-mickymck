@@ -96,15 +96,18 @@ h2 {
     border: none;
     background-color: transparent;
     padding: 0;
-    margin-right: 10px;;
     color: red;
+}
+
+.cancel-button {
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .delete-button:hover {
     border: none;
     background-color: transparent;
     padding: 0;
-    margin-right: 10px;
     color: red;
     text-decoration: underline;
 }
@@ -129,15 +132,20 @@ h2 {
     margin: 30px -13px 2px auto;
 }
 
-.add-comment {
+.comment-body {
+    margin: 10px 0 0 10%;
+    width: 90%;
+}
+
+.add-comment-div {
     margin: 10px 0 0 10%;
     text-align: right;
     width: 90%;
 }
 
-.comment-body {
-    margin: 10px 0 0 10%;
-    width: 90%;
+.comment-form {
+    display: none;
+    width: 100%;
 }
 
 .comment-body p {
@@ -148,10 +156,10 @@ h2 {
     border: 1px solid rgb(250, 240, 220);
 }
 
-.create-note {
-    margin-bottom: 50px;
+.create-note-container {
+    max-width: 80%;
+    margin: 0 auto;
 }
-
 .create-note-header {
     text-align: center;
 }
