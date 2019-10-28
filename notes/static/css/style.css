@@ -112,6 +112,24 @@ h2 {
     text-decoration: underline;
 }
 
+.comment-button {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    color: blue;
+    text-decoration: underline;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.comment-button:hover {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    color: blue;
+    text-decoration: underline;
+}
+
 .delete-note-form {
     display: none;
     flex-direction: column;

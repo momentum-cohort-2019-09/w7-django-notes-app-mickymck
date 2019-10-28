@@ -53,7 +53,7 @@
             </div>
 
             <div class='add-comment-div'>
-                <form action="{% url 'add_comment' pk=note.pk %}" method='POST' class='comment-form' id='comment-form-{{ note.pk }}' value='{{ comment.comment }}'>
+                <form action="{% url 'add_comment' pk=note.pk %}" method='POST' class='comment-form' id='comment-form-{{ note.pk }}'>
                     {% csrf_token %}
                     {{ form }}
                     <input class='comment-input' type='text' name='comment' value='{{ comment.comment }}'>
