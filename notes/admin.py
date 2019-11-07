@@ -17,7 +17,6 @@ class CommentAdmin(admin.ModelAdmin):
         'note',
         'comment',
         'user',
-        'email',
     )
 
 admin.site.register(Note, NoteAdmin)

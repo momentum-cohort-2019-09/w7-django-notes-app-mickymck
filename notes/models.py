@@ -12,9 +12,8 @@ class Note(models.Model):
 
 class Comment(models.Model):
     note = models.ForeignKey(Note, related_name='comments', on_delete=models.CASCADE)
-    user = models.CharField(max_length=100)
-    email = models.EmailField()
     comment = models.TextField()
+    user = models.CharField(max_length=100)
 
     def __str__(self):
         return self.user

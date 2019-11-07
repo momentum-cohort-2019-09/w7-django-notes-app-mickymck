@@ -53,9 +53,9 @@
             </div>
 
             <div class='add-comment-div'>
-                <form action="{% url 'add_comment' pk=note.pk %}" method='POST' class='comment-form' id='comment-form-{{ note.pk }}'>
+                <form action="{% url 'add_comment' pk=note.pk %}" method='POST' class='comment-form' type='text' id='comment-form-{{ note.pk }}'>
                     {% csrf_token %}
-                    {{ form }}
+                    {{ form.as_p }}
                     <input class='comment-input' type='text' name='comment' value='{{ comment.comment }}'>
                 </form>
                 <button type='submit' class='comment-button'>Add Comment</button>
